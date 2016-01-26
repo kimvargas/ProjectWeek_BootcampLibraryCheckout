@@ -12,37 +12,62 @@ namespace ProjectWeek_BootcampLibraryCheckout
         {
             while (true)
             {
-                int menuChoice;
-                string errorNum = "Please type a number.";
-                string menu1 = "\nList of Studnet Names\n\n";
-                //Part 1:
-
-                //2 Points - Application should be clearly named in the application (Bootcamp Resources Checkout System or an original name)
-                string title = "********************* BootCamp Lending Library Checkout *********************";
-                //3 Points - Program should be case insensitive
-                //12 Points - Application should have a menu with the following options:
-                //View Students
-                //View Available Resources
-                //View Student Accounts
-                //Checkout Item
-                //Return Item
-                //Exit
-
-                string[] studentNames = {"Quinn Bennett", "Imari Childress", "Jennifer Evans", "Richard Raponi", "Cameron Robinson", "Krista Scholdberg", "Ashley Stewart", "Cadale Thomas", "Kim Vargas", "Mary Winkelman", "Sirahn Butler" };
-                string[] bookNames = {"Programming Interviews Exposed", "Killer Game Programming", "Head First C#", "A Smarter Way to Learn JavaScript", "Implementing Responsive Design", "C# 5.0 For Dummies", "Assembly Language Tutor", "Mastering C Pointers", "Javascritpt For Kids", "Essential C# 6.0", "ASP.NET MVC 5" };
-                
+                //Strings and things I will use later... trying to clean up my code.
                 string menu = "\n\nMENU\n\n(Please type a number.)" +
                     "\n\n1. View Students\n2. View Available Resources\n" +
                     "3. View Student Accounts\n4. Checkout Item\n5. Return Item" +
-                    "\n6. Exit";
+                    "\n6. Exit\n";
+                string menu1 = "\nLIST OF STUDENT NAMES\n\n";
+                string menu2 = "\nAVAILABLE RESOURCES\n\n";
+                string menu3 = "\nSTUDENT ACCOUNTS\n\n";
+                string menu4 = "\nITEM CHECKOUT\n\n";
+                string menu5 = "\nITEM RETURN\n\n";
+                string errorNum = "Please type a number.";
+                string userRequest;
+                string bookRequest;
+
+                //Arrays
+                string[] studentNames = { "Quinn Bennett", "Imari Childress", "Jennifer Evans", "Richard Raponi", "Cameron Robinson", "Krista Scholdberg", "Ashley Stewart", "Cadale Thomas", "Kim Vargas", "Mary Winkelman", "Sirahn Butler" };
+                //uppercase to compare
+                string[] studentNamesUp = new string[studentNames.Length];
+                int j = 0;
+                foreach (string studentName in studentNames)
+                {
+                    studentNamesUp[j] = studentName.ToUpper();
+                    j++;
+                }
+                
+                string[] bookNames = { "Programming Interviews Exposed", "Killer Game Programming", "Head First C#", "A Smarter Way to Learn JavaScript", "Implementing Responsive Design", "C# 5.0 For Dummies", "Assembly Language Tutor", "Mastering C Pointers", "Javascritpt For Kids", "Essential C# 6.0", "ASP.NET MVC 5" };
+                string[] bookNamesUp = new string[bookNames.Length];
+                int k = 0;
+                foreach (string bookName in bookNames)
+                {
+                    bookNamesUp[k] = bookName.ToUpper();
+                    k++;
+                }
+
+                //Ints
+                int menuChoice;
+
+
+                //Application Name
+                string title = "********************* BootCamp Lending Library Checkout *********************";
                 Console.WriteLine(title);
                 Console.WriteLine(menu);
                 bool menuNAN = int.TryParse(Console.ReadLine(), out menuChoice);
                 while (!menuNAN)
                 {
-                    Console.WriteLine(errorNum);
+                    Console.Clear();
+                    Console.WriteLine(title);
+                    Console.WriteLine(menu);
+                    Console.WriteLine("\n" + errorNum);
                     menuNAN = int.TryParse(Console.ReadLine(), out menuChoice);
                 }
+
+                int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
+                int i = 0;
+                Array.Sort(studentNames);
+                Array.Sort(bookNames);
 
                 switch (menuChoice)
                 {
@@ -52,18 +77,100 @@ namespace ProjectWeek_BootcampLibraryCheckout
                         Console.WriteLine(menu1);
                         foreach (string studentName in studentNames)
                             {
-                            Array.Sort(studentNames);
+                            Console.Write(numbers[i] + ". ");
                             Console.WriteLine(studentName);
+                            i++;
                             }
                         Console.WriteLine("\n\nHit any key to return to menu");
                         Console.ReadKey();
                         Console.Clear();
                         break;
                     case 2:
+                        Console.Clear();
+                        Console.WriteLine(title);
+                        Console.WriteLine(menu2);
+                        foreach (string bookName in bookNames)
+                        {
+                            Console.Write(numbers[i] + ". ");
+                            Console.WriteLine(bookName);
+                            i++;
+                        }
+                        Console.WriteLine("\n\nHit any key to return to menu");
+                        Console.ReadKey();
+                        Console.Clear();
+                        break;
 
                     case 3:
+                        Console.Clear();
+                        Console.WriteLine(title);
+                        Console.WriteLine(menu3);
+                        Console.WriteLine("\n\nEnter student name:" /*+ "\n--Type \"Help\" to see list of students."*/);
+                        userRequest = Console.ReadLine();
+                        while (!studentNamesUp.Contains(userRequest.ToUpper()))
+                        {
+                            Console.Clear();
+                            Console.WriteLine(title);
+                            Console.WriteLine(menu3);
+                            Console.WriteLine("\aError: Request Unavailable");
+                            Console.WriteLine("\n\nEnter student name:" /*+ "\n--Type \"Help\" to see list of students."*/);
+                            userRequest = Console.ReadLine();
+                        }
+                        Console.WriteLine("Student Exists"); //Dunno what to do here yet...
+                        
+                        Console.WriteLine("\n\nHit any key to return to menu");
+                        Console.ReadKey();
+                        Console.Clear();
+                        break;
                     case 4:
+                        Console.Clear();
+                        Console.WriteLine(title);
+                        Console.WriteLine(menu4);
+                        Console.WriteLine("\n\nEnter student name:" /*+ "\n--Type \"Help\" to see list of students."*/);
+                        userRequest = Console.ReadLine();
+                        while (!studentNamesUp.Contains(userRequest.ToUpper()))
+                        {
+                            Console.Clear();
+                            Console.WriteLine(title);
+                            Console.WriteLine(menu3);
+                            Console.WriteLine("\aError: Request Unavailable");
+                            Console.WriteLine("\n\nEnter student name:" /*+ "\n--Type \"Help\" to see list of students."*/);
+                            userRequest = Console.ReadLine();
+                        }
+
+                        Console.Clear();
+                        Console.WriteLine(title);
+                        Console.WriteLine(menu3);
+                        Console.WriteLine("Check Out for " + userRequest.ToUpper() + "\n\n");
+
+                        Console.WriteLine("\n\nEnter material to check out:" /*+ "\n--Type \"Help\" to see list of resources."*/);
+                        bookRequest = Console.ReadLine();
+                        while (!bookNamesUp.Contains(bookRequest.ToUpper()))
+                        {
+                            Console.Clear();
+                            Console.WriteLine(title);
+                            Console.WriteLine(menu3);
+                            Console.WriteLine("Check Out for " + userRequest.ToUpper() + "\n\n");
+                            Console.WriteLine("\aError: Request Unavailable");
+                            Console.WriteLine("\n\nEnter material to check out:" /*+ "\n--Type \"Help\" to see list of resources."*/);
+                            bookRequest = Console.ReadLine();
+                        }
+
+
+
+
+                        Console.WriteLine("\n\nHit any key to return to menu");
+                        Console.ReadKey();
+                        Console.Clear();
+                        break;
                     case 5:
+                        Console.Clear();
+                        Console.WriteLine(title);
+                        Console.WriteLine(menu5);
+
+                        Console.WriteLine("\n\nHit any key to return to menu");
+                        Console.ReadKey();
+                        Console.Clear();
+                        break;
                     case 6:
                     default:
                         break;
