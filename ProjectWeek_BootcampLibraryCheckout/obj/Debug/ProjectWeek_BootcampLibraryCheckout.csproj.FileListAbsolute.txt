@@ -1,0 +1,6 @@
+C:\Users\We Can Code IT\Desktop\WeCanCodeIT\ProjectWeek_BootcampLibraryCheckout\ProjectWeek_BootcampLibraryCheckout\bin\Debug\ProjectWeek_BootcampLibraryCheckout.exe.config
+C:\Users\We Can Code IT\Desktop\WeCanCodeIT\ProjectWeek_BootcampLibraryCheckout\ProjectWeek_BootcampLibraryCheckout\bin\Debug\ProjectWeek_BootcampLibraryCheckout.exe
+C:\Users\We Can Code IT\Desktop\WeCanCodeIT\ProjectWeek_BootcampLibraryCheckout\ProjectWeek_BootcampLibraryCheckout\bin\Debug\ProjectWeek_BootcampLibraryCheckout.pdb
+C:\Users\We Can Code IT\Desktop\WeCanCodeIT\ProjectWeek_BootcampLibraryCheckout\ProjectWeek_BootcampLibraryCheckout\obj\Debug\ProjectWeek_BootcampLibraryCheckout.csprojResolveAssemblyReference.cache
+C:\Users\We Can Code IT\Desktop\WeCanCodeIT\ProjectWeek_BootcampLibraryCheckout\ProjectWeek_BootcampLibraryCheckout\obj\Debug\ProjectWeek_BootcampLibraryCheckout.exe
+C:\Users\We Can Code IT\Desktop\WeCanCodeIT\ProjectWeek_BootcampLibraryCheckout\ProjectWeek_BootcampLibraryCheckout\obj\Debug\ProjectWeek_BootcampLibraryCheckout.pdb
